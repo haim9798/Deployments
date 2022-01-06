@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lnpnackend
+  labels : 
+    app: lnpbackend
+    tier: backend
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: lnpbackend
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: lnpbackend
+        tier: backend
+    spec:
+      containers:
+      - name: lnpbackend
+        image: haim9798/lnpbackend:0.5
+        imagePullPolicy: Always
+        name: lnpbackend
+        ports:
+        - name: http
+          containerPort: 8000
+        - name: sip
+          containerPort: 5060
+        - name: dns 
+          containerPort: 53        

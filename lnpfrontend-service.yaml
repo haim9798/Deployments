@@ -5,7 +5,6 @@ metadata:
   labels:
     app: lnpwebgui
   name: lnpwebgui
-  namespace: default
   resourceVersion: "3825"
   uid: 38c5b7b4-3a83-42f8-a170-b21f8d571388
 spec:

@@ -23,8 +23,17 @@ spec:
         args:
           - "--protected-mode"
           - "no"
+          - "--appendonly"
+          - "yes"
+        volumeMounts:
+        - name: redis-data
+          mountPath: /data 
         ports:
         - containerPort: 6379
+      volumes:
+      - name: redis-data
+        hostPath:
+          path: /home/docker/redis-data
 ---
 apiVersion: apps/v1
 kind: Deployment

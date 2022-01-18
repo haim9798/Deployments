@@ -6,7 +6,7 @@ metadata:
     app: lnpbackend
     tier: backend
 spec:
-  replicas: 2
+  replicas: 3
   selector: 
     matchLabels:
       app: lnpbackend
@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
       - name: lnpbackend
-        image: haim9798/lnpbackend:0.5
-        imagePullPolicy: Always
+        image: docker.io/haim9798/lnpbackend:0.7
+        imagePullPolicy: IfNotPresent
         name: lnpbackend
         ports:
         - name: http
